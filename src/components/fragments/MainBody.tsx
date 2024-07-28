@@ -2,14 +2,15 @@ import React from "react";
 
 interface MainBodyProps {
   children: React.ReactNode;
+  width: string;
 }
 
-const MainBody: React.FC<MainBodyProps> = ({ children }) => {
+const MainBody: React.FC<MainBodyProps> = ({ width, children }) => {
   return (
     <div>
       <main className="bg-blue-100">
         <div
-          className={`flex flex-wrap overflow-y-scroll h-[669px] w-[1000px] custom-scrollbar`}
+          className={`flex flex-wrap overflow-y-scroll h-[669px] ${width} custom-scrollbar`}
         >
           {children}
         </div>

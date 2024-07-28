@@ -14,9 +14,10 @@ type AppShellProps = {
 const AppShell = (props: AppShellProps) => {
   const { children } = props;
   const pathname = usePathname();
-  console.log(pathname);
+  // console.log(pathname);
 
   const disabledComponents = ["/404", "/login", "/register"];
+  const disabledComponentSideBody = ["/menu"];
   return (
     <>
       <main className="flex">
@@ -24,10 +25,19 @@ const AppShell = (props: AppShellProps) => {
           <>
             <Nav />
             <div className="block">
-              <NavigationMenuDemo />
-              <MainBody>{children}</MainBody>
+              {!disabledComponentSideBody.includes(pathname) ? (
+                <>
+                  <NavigationMenuDemo />
+                  <MainBody width="w-[1000]">{children}</MainBody>
+                </>
+              ) : (
+                <>
+                  <NavigationMenuDemo />
+                  <MainBody width="w-[1348px]">{children}</MainBody>
+                </>
+              )}
             </div>
-            <SideBody></SideBody>
+            {!disabledComponentSideBody.includes(pathname) && <SideBody />}
           </>
         )}
         {disabledComponents.includes(pathname) && <>{children}</>}

@@ -10,7 +10,7 @@ import ProductCard from "../elements/ProductCard";
 const SideBody = () => {
   return (
     <>
-      <article className="block bg-blue-200 p-6 h-auto w-screen">
+      <article className="block bg-blue-200 p-6 h-[729px] w-[500px]">
         <div className="relative w-full rounded-lg  flex items-start mb-4 shadow-md">
           <input
             className="w-full focus:outline-none focus:ring-2 focus:ring-blue-200  rounded-lg pl-10 pr-3 py-2"
@@ -18,7 +18,7 @@ const SideBody = () => {
             placeholder="Search products..."
           />
         </div>
-        <div className="overflow-y-scroll h-[248px] w-[300px] custom-scrollbar">
+        <div className="overflow-y-scroll h-[336px] w-[300px] custom-scrollbar">
           <Carousel orientation="vertical">
             <CarouselContent>
               <CarouselItem className="">
