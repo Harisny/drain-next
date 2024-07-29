@@ -20,9 +20,9 @@ const AppShell = (props: AppShellProps) => {
   const disabledComponentSideBody = ["/menu"];
   return (
     <>
-      <main className="flex">
-        {!disabledComponents.includes(pathname) && (
-          <>
+      {!disabledComponents.includes(pathname) && (
+        <>
+          <main className="flex">
             <Nav />
             <div className="block">
               {!disabledComponentSideBody.includes(pathname) ? (
@@ -38,10 +38,10 @@ const AppShell = (props: AppShellProps) => {
               )}
             </div>
             {!disabledComponentSideBody.includes(pathname) && <SideBody />}
-          </>
-        )}
-        {disabledComponents.includes(pathname) && <>{children}</>}
-      </main>
+          </main>
+        </>
+      )}
+      {disabledComponents.includes(pathname) && <>{children}</>}
     </>
   );
 };
